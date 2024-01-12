@@ -54,6 +54,18 @@ function perzonalized_widgets_areas(){
       'id' => 'social'
     )
   );
+  register_sidebar( 
+    array(
+      'name' => 'Selector de idioma',
+      'id' => 'idioma'
+    )
+  );
+  register_sidebar( 
+    array(
+      'name' => 'Botón CTA (al costado del menú Header)',
+      'id' => 'btn_header'
+    )
+  );
 }
 add_action( 'widgets_init', 'perzonalized_widgets_areas' );
 

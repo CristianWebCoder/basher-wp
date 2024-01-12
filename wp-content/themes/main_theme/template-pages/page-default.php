@@ -6,6 +6,7 @@
 defined('ABSPATH') or die('No script kiddies please!');
 get_header();
 ?>
+<?php get_template_part('template-parts/loader'); ?>
 <?php get_template_part('template-parts/menu/menu'); ?>
 
 <!-- CONTENIDO -->

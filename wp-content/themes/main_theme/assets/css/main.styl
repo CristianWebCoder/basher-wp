@@ -30,7 +30,7 @@
         scale 1
 .main_scrollsnap
     width 100%
-    // height 100vh
+    height 100vh
     // scroll-snap-type y mandatory
     // overflow-y scroll
     overflow-x hidden
@@ -57,8 +57,9 @@
     header
     section
     footer
-        scroll-snap-align start
-        scroll-snap-stop always
+        width 100vw
+        // scroll-snap-align start
+        // scroll-snap-stop always
     &.modal-active
         overflow hidden !important
         &::before
@@ -532,6 +533,11 @@ body
                             border-color #000
                             border-style solid
                             transform translateY(-50%) rotate(314deg)
+                        span
+                            overflow hidden
+                            white-space nowrap
+                            text-overflow ellipsis
+                            width 94%
                     .custom-options
                         width 100%
                         background-color $white
@@ -1320,8 +1326,68 @@ body
                 background-size 170%
                 padding-bottom 20px
                 img
-                    width 100%
+                    width 92%
                     height auto
+                .list_countries
+                    .country
+                        p
+                            font-size 1rem
+                        .map_indicator
+                            .circle
+                                width 8px
+                                height 8px
+                            .indicator
+                                height 10px
+                        &.c_canada
+                            top 6%
+                            left 9%
+                        &.c_germany
+                            top 3%
+                            right 32%
+                        &.c_netherlands
+                            top 8%
+                            right 29%
+                            p
+                                left -80px
+                        &.c_peru
+                            top 45%
+                            left 20%
+                        &.c_chile
+                            top 64%
+                            left 23.5%
+                        &.c_argentina
+                            top 58%
+                            left 26.5%
+                        &.c_philippines
+                            top 18%
+                            right -9.5%
+                            p
+                                top 0px
+                                right 48px
+                            .map_indicator
+                                .indicator
+                                    height 50px
+                        &.c_indonesia
+                            top 25%
+                            right -1%
+                            p   
+                                top 3px
+                                left -50px
+                            .map_indicator
+                                .indicator
+                                    height 32px
+                        &.c_singapore
+                            top 37%
+                            right 3.3%
+                            p
+                                top 23px
+                                left -78px
+                        &.c_malaysa
+                            top 31%
+                            right 5%
+                            p
+                                left -62px
+                                top 7px
     .page_default
         .main_body
             padding 4rem 0

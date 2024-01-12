@@ -1,7 +1,12 @@
-function createCustomSelect(realSelectId, displayText) {
+function createCustomSelect(realSelectId) {
     var $realSelect = $('#' + realSelectId);
+    var firstOptionText = $realSelect.find('option:first').text(); // Obtiene el texto de la primera opción
     var $customSelect = $('<div class="custom-select"></div>');
-    var $customSelectDisplay = $('<div class="custom-select-display"></div>').text(displayText);
+    var $customSelectDisplay = $('<div class="custom-select-display"></div>');
+    var $displayText = $('<span></span>').text(firstOptionText); // Crea un span para el texto
+
+    $customSelectDisplay.append($displayText); // Añade el span al custom-select-display
+
     var $customOptions = $('<div class="custom-options" style="display: none;"></div>');
 
     $realSelect.find('option').each(function() {
@@ -10,7 +15,7 @@ function createCustomSelect(realSelectId, displayText) {
 
         $customOption.on('click', function() {
             $realSelect.val($option.val()).trigger('change');
-            $customSelectDisplay.text($option.text());
+            $displayText.text($option.text()); // Actualiza el texto del span
             $customOptions.hide();
             $customSelect.removeClass('open');
         });
@@ -38,14 +43,15 @@ function createCustomSelect(realSelectId, displayText) {
 }
 
 $(document).ready(function() {
-    createCustomSelect('select-real-identi', '¿Cómo desea identificarse?*');
-    createCustomSelect('select-real-contacto', 'Seleccione una opción de contacto*');
+    createCustomSelect('select-real-identi');
+    createCustomSelect('select-real-contacto');
 });
 
 $(document).ready(function() {
     // Función para mostrar/ocultar campos basado en la selección
     function toggleContactFields() {
         var selectedOption = $('#select-real-contacto').val();
+
         if (selectedOption === 'Whatsapp') {
             $('.box_input_whatsapp').show();
             $('.box_input_telegram').hide();
@@ -53,16 +59,16 @@ $(document).ready(function() {
             $('.box_input_telegram').show();
             $('.box_input_whatsapp').hide();
         } else {
-            $('.box-input-whatsapp, .box-input-telegram').hide();
+            // Oculta ambos campos si la opción seleccionada es "Seleccione una opción de contacto" o cualquier otra opción
+            $('.box_input_whatsapp, .box_input_telegram').hide();
         }
     }
-
     $('.box_input_whatsapp, .box_input_telegram').hide();
-
     $('#select-real-contacto').change(toggleContactFields);
-
     toggleContactFields();
 });
+
+
 
 document.addEventListener('wpcf7mailsent', function(event) {
     var $containerThankYou = jQuery('.container_thank_you');

@@ -24,7 +24,20 @@
                             &.menu-item-has-children
                                 .submenu
                                     background-color $black
-
+            .language_switcher
+                ul
+                    .wp-block-navigation
+                        .wp-block-navigation-item__label
+                            color $white !important
+                        .wp-block-navigation-submenu 
+                            .wp-block-navigation__submenu-icon
+                                    svg
+                                        color $white !important
+                    > .open-on-hover-click
+                        .wp-block-navigation-item
+                            .wp-block-navigation-item__content
+                                span
+                                    color $black !important
     .container
         display flex
         justify-content space-between
@@ -126,8 +139,56 @@
             .link_button
                 display flex
                 align-items center
-            .icon
-                display none
+                ul
+                    list-style none
+                .btn_header
+                    a
+                        display flex
+                        justify-content center
+                        align-items center
+                        border-radius 2.1875rem
+                        background-color $primary_color
+                        height 3.125rem
+                        padding .25rem 2.375rem .5rem
+                        font-size 1rem
+                        color $white
+                        text-transform uppercase
+                        box-shadow 0px 1px 3px 0px rgba(0, 0, 0, 0.20)
+                        transition all 0.3s ease
+                        font-family 'Gilroy Bold'
+                        &:hover
+                            color $primary_color
+                            background $green
+                        &:active
+                            filter brightness(0.95)
+                                .icon
+                                    display none
+            .language_switcher
+                display flex
+                align-items center
+                ul
+                    list-style none
+                    .wp-block-navigation
+                        .wp-block-navigation-item__label
+                            font-family 'Gilroy Bold'
+                            text-transform uppercase
+                            color $black
+                            transition all 0.3s ease
+                        .wp-block-navigation-submenu 
+                            .wp-block-navigation__submenu-icon
+                                    svg
+                                        color $black
+                    > .open-on-hover-click
+                        .wp-block-navigation-item
+                            .wp-block-navigation-item__content
+                                background-color $white
+                                padding .625rem 1.25rem
+                                border-radius .3125rem
+                                box-shadow 0px 4px 10px rgba(0,0,0,0.1)
+                                &:hover
+                                    background-color $primary_color
+                                    span
+                                        color $white !important
         // 1.2. Hamburguer menu
         .header_menu
             display none

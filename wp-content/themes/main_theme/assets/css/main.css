@@ -393,6 +393,15 @@ svg,
 .section_header.sticky .container .header_links .links_menu > ul li.menu-item-has-children .submenu {
   background-color: #000;
 }
+.section_header.sticky .container .language_switcher ul .wp-block-navigation .wp-block-navigation-item__label {
+  color: #fff !important;
+}
+.section_header.sticky .container .language_switcher ul .wp-block-navigation .wp-block-navigation-submenu .wp-block-navigation__submenu-icon svg {
+  color: #fff !important;
+}
+.section_header.sticky .container .language_switcher ul > .open-on-hover-click .wp-block-navigation-item .wp-block-navigation-item__content span {
+  color: #000 !important;
+}
 .section_header .container {
   display: flex;
   justify-content: space-between;
@@ -511,8 +520,58 @@ svg,
   display: flex;
   align-items: center;
 }
-.section_header .container .header_links .icon {
+.section_header .container .header_links .link_button ul {
+  list-style: none;
+}
+.section_header .container .header_links .link_button .btn_header a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2.1875rem;
+  background-color: #6e00e3;
+  height: 3.125rem;
+  padding: 0.25rem 2.375rem 0.5rem;
+  font-size: 1rem;
+  color: #fff;
+  text-transform: uppercase;
+  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  font-family: 'Gilroy Bold';
+}
+.section_header .container .header_links .link_button .btn_header a:hover {
+  color: #6e00e3;
+  background: #45ffc1;
+}
+.section_header .container .header_links .link_button .btn_header a:active filter brightness(0.95) .icon {
   display: none;
+}
+.section_header .container .header_links .language_switcher {
+  display: flex;
+  align-items: center;
+}
+.section_header .container .header_links .language_switcher ul {
+  list-style: none;
+}
+.section_header .container .header_links .language_switcher ul .wp-block-navigation .wp-block-navigation-item__label {
+  font-family: 'Gilroy Bold';
+  text-transform: uppercase;
+  color: #000;
+  transition: all 0.3s ease;
+}
+.section_header .container .header_links .language_switcher ul .wp-block-navigation .wp-block-navigation-submenu .wp-block-navigation__submenu-icon svg {
+  color: #000;
+}
+.section_header .container .header_links .language_switcher ul > .open-on-hover-click .wp-block-navigation-item .wp-block-navigation-item__content {
+  background-color: #fff;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.3125rem;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+.section_header .container .header_links .language_switcher ul > .open-on-hover-click .wp-block-navigation-item .wp-block-navigation-item__content:hover {
+  background-color: #6e00e3;
+}
+.section_header .container .header_links .language_switcher ul > .open-on-hover-click .wp-block-navigation-item .wp-block-navigation-item__content:hover span {
+  color: #fff !important;
 }
 .section_header .container .header_menu {
   display: none;
@@ -866,6 +925,7 @@ svg,
 }
 .main_scrollsnap {
   width: 100%;
+  height: 100vh;
   overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
@@ -896,8 +956,7 @@ svg,
 .main_scrollsnap header,
 .main_scrollsnap section,
 .main_scrollsnap footer {
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+  width: 100vw;
 }
 .main_scrollsnap.modal-active {
   overflow: hidden !important;
@@ -1449,6 +1508,12 @@ body.modal-active::before {
   border-color: #000;
   border-style: solid;
   transform: translateY(-50%) rotate(314deg);
+}
+.section_contact .container form .contact_form .box_input .custom-select-display span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 94%;
 }
 .section_contact .container form .contact_form .box_input .custom-options {
   width: 100%;
@@ -2415,8 +2480,83 @@ body.modal-active::before {
     padding-bottom: 20px;
   }
   .page_about .section_earth .map img {
-    width: 100%;
+    width: 92%;
     height: auto;
+  }
+  .page_about .section_earth .map .list_countries .country p {
+    font-size: 1rem;
+  }
+  .page_about .section_earth .map .list_countries .country .map_indicator .circle {
+    width: 8px;
+    height: 8px;
+  }
+  .page_about .section_earth .map .list_countries .country .map_indicator .indicator {
+    height: 10px;
+  }
+  .page_about .section_earth .map .list_countries .country.c_canada {
+    top: 6%;
+    left: 9%;
+  }
+  .page_about .section_earth .map .list_countries .country.c_germany {
+    top: 3%;
+    right: 32%;
+  }
+  .page_about .section_earth .map .list_countries .country.c_netherlands {
+    top: 8%;
+    right: 29%;
+  }
+  .page_about .section_earth .map .list_countries .country.c_netherlands p {
+    left: -80px;
+  }
+  .page_about .section_earth .map .list_countries .country.c_peru {
+    top: 45%;
+    left: 20%;
+  }
+  .page_about .section_earth .map .list_countries .country.c_chile {
+    top: 64%;
+    left: 23.5%;
+  }
+  .page_about .section_earth .map .list_countries .country.c_argentina {
+    top: 58%;
+    left: 26.5%;
+  }
+  .page_about .section_earth .map .list_countries .country.c_philippines {
+    top: 18%;
+    right: -9.5%;
+  }
+  .page_about .section_earth .map .list_countries .country.c_philippines p {
+    top: 0px;
+    right: 48px;
+  }
+  .page_about .section_earth .map .list_countries .country.c_philippines .map_indicator .indicator {
+    height: 50px;
+  }
+  .page_about .section_earth .map .list_countries .country.c_indonesia {
+    top: 25%;
+    right: -1%;
+  }
+  .page_about .section_earth .map .list_countries .country.c_indonesia p {
+    top: 3px;
+    left: -50px;
+  }
+  .page_about .section_earth .map .list_countries .country.c_indonesia .map_indicator .indicator {
+    height: 32px;
+  }
+  .page_about .section_earth .map .list_countries .country.c_singapore {
+    top: 37%;
+    right: 3.3%;
+  }
+  .page_about .section_earth .map .list_countries .country.c_singapore p {
+    top: 23px;
+    left: -78px;
+  }
+  .page_about .section_earth .map .list_countries .country.c_malaysa {
+    top: 31%;
+    right: 5%;
+  }
+  .page_about .section_earth .map .list_countries .country.c_malaysa p {
+    left: -62px;
+    top: 7px;
   }
   .page_default .main_body {
     padding: 4rem 0;

@@ -18,15 +18,19 @@
                 'menu_class'        => 'links_menu'
             )); ?>
             <div class="link_button">
-                <a href="#cotizar" class="primary_button"><?php _e('Contacto', 'main_theme') ?></a>
+                <ul>
+                    <?php dynamic_sidebar('btn_header'); ?>
+                </ul>
             </div>
             <div class="language_switcher">
-                ES
-                <span class="flecha"></span>
+                <ul>
+                    <?php dynamic_sidebar('idioma'); ?>
+                </ul>
             </div>
             <div class="icon">
-                <?php dynamic_sidebar('logo_icono'); ?>
-                <!-- <img src="assets/img/logo_favicon.svg" alt="Icono de Basher" width="190" height="164"> -->
+                <ul>
+                    <?php dynamic_sidebar('logo_icono'); ?>
+                </ul>
             </div>
         </div>
         <div class="header_menu">

@@ -251,11 +251,11 @@ get_header();
                 </div>
                 <div class="container container_thank_you">
                     <div class="content">
-                        <p class="title_thanks">¡Gracias!</p>
+                        <p class="title_thanks"><?php echo __('Gracias', 'main_theme') ?></p>
                         <p>
-                            <span>Pronto nos</span>
-                            <span>contactaremos</span>
-                            <span>contigo</span>
+                            <span><?php echo __('Pronto nos', 'main_theme') ?></span>
+                            <span><?php echo __('contactaremos', 'main_theme') ?></span>
+                            <span><?php echo __('contigo', 'main_theme') ?></span>
                         </p>
                     </div>
                 </div>

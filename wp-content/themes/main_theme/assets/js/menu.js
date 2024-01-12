@@ -29,7 +29,7 @@ $(document).ready(function() {
         $(this).toggleClass('active');
     });
 });
-// Sticky color
+
 $(document).ready(function(){
     var header = $('.section_header'); // Selecciona el elemento del encabezado
     var headerLinks = $('.header_links'); // Selecciona los enlaces del encabezado
@@ -49,8 +49,6 @@ $(document).ready(function(){
         }
     }
 
-    // Escuchar el evento de scroll en el contenedor .main_scrollsnap para actualizar el encabezado y los enlaces
-    mainScrollsnap.scroll(function() {
-        addOrRemoveStickyClasses();
-    });
+    // Escuchar el evento de scroll en el contenedor .main_scrollsnap
+    mainScrollsnap.scroll(addOrRemoveStickyClasses);
 });

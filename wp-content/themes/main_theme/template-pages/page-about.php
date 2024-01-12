@@ -6,6 +6,7 @@
 defined('ABSPATH') or die('No script kiddies please!');
 get_header();
 ?>
+<?php get_template_part('template-parts/loader'); ?>
 <div class="main_scrollsnap">
     <?php get_template_part('template-parts/menu/menu'); ?>
     <!-- 1. BANNER -->
