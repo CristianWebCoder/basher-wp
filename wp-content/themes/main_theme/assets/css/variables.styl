@@ -47,11 +47,16 @@ body
             top 32px /* Standart Height for bar admin WordPress */
         .bar__top
             top calc(var(--nav-height) + 32px)
-
+@media screen and (max-width: 1366px)
+    $slide_logos_height_laptop = 120px
+    :root
+        --slide-logo-height $slide_logos_height_laptop
 @media screen and (max-width: 768px)
-    $slide_logos_height_mobile = 120px
     $nav_height_mobile = 90px
-    $height_banner_mobile = $nav_height_mobile + $slide_logos_height_mobile
     :root
         --height-out-banner $height_banner_mobile
-        --slide-logo-height $slide_logos_height_mobile
+
+@media screen and (max-width: 640px)
+    $slide_logos_height_super_mobile = 90px
+    :root
+        --slide-logo-height $slide_logos_height_super_mobile

@@ -7,8 +7,8 @@ defined('ABSPATH') or die('No script kiddies please!');
 get_header();
 ?>
 <?php get_template_part('template-parts/loader'); ?>
-<div class="main_scrollsnap">
-    <?php get_template_part('template-parts/menu/menu'); ?>
+<?php get_template_part('template-parts/menu/menu'); ?>
+<div class="main_scrollsnap" id="pagepiling">
     <!-- 1. BANNER -->
     <?php if (have_rows('seccion_banner')) : ?>
         <?php while (have_rows('seccion_banner')) : the_row(); ?>
@@ -20,7 +20,8 @@ get_header();
                 $sub_text_4 = get_sub_field('sub_texto_nro_4');
                 $sub_text_5 = get_sub_field('sub_texto_nro_5');
             ?>
-            <section class="section_banner">
+            <section class="section section_banner">
+                <img class="cubito-flotante cub-1" src="<?php echo get_template_directory_uri() ?>/assets/img/cubito-1.svg" alt="cubito">
                 <div class="container">
                     <h1>
                         <span class="subtitle_border">
@@ -35,6 +36,7 @@ get_header();
                         </span>
                     </h1>
                 </div>
+                <img class="cubito-flotante cub-2" src="<?php echo get_template_directory_uri() ?>/assets/img/cubito-2.svg" alt="cubito">
             </section>
         <?php endwhile; ?>
     <?php endif; ?>
@@ -46,22 +48,18 @@ get_header();
                 $descripcion_sup = get_sub_field('descripcion_superior');
                 $descripcion_inf = get_sub_field('descripcion_inferior');
             ?>
-            <section class="section_mision">
+            <section class="section section_mision">
+                <img class="cubito-flotante cub-1" src="<?php echo get_template_directory_uri() ?>/assets/img/cubito-1.svg" alt="cubito">
                 <div class="container">
                     <div class="col">
-                        <span class="line_subtitle">
-                            <h2 class="subtitle"><?php echo __($subtitle, 'main_theme') ?></h2>
-                        </span>
+                        <h2 class="subtitle"><?php echo __($subtitle, 'main_theme') ?></h2>
                     </div>
                     <div class="col">
-                        <span class="line_sup_description">
-                            <div class="super_description"><?php echo __($descripcion_sup, 'main_theme') ?></div>
-                        </span>
-                        <span class="line_description">
-                            <div class="description"><?php echo __($descripcion_inf, 'main_theme') ?></div>
-                        </span>
+                        <div class="super_description"><?php echo __($descripcion_sup, 'main_theme') ?></div>
+                        <div class="description"><?php echo __($descripcion_inf, 'main_theme') ?></div>
                     </div>
                 </div>
+                <img class="cubito-flotante cub-2" src="<?php echo get_template_directory_uri() ?>/assets/img/cubito-2.svg" alt="cubito">
             </section>
         <?php endwhile; ?>
     <?php endif; ?>
@@ -73,22 +71,18 @@ get_header();
                 $descripcion_sup = get_sub_field('descripcion_superior');
                 $descripcion_inf = get_sub_field('descripcion_inferior');
             ?>
-            <section class="section_vision">
+            <section class="section section_vision">
+                <img class="cubito-flotante cub-1" src="<?php echo get_template_directory_uri() ?>/assets/img/cubito-1.svg" alt="cubito">
                 <div class="container">
                     <div class="col">
-                        <span class="line_subtitle">
-                            <h2 class="subtitle"><?php echo __($subtitle, 'main_theme') ?></h2>
-                        </span>
+                        <h2 class="subtitle"><?php echo __($subtitle, 'main_theme') ?></h2>
                     </div>
                     <div class="col">
-                        <span class="line_sup_description">
-                            <div class="super_description"><?php echo __($descripcion_sup, 'main_theme') ?></div>
-                        </span>
-                        <span class="line_description">
-                            <div class="description"><?php echo __($descripcion_inf, 'main_theme') ?></div>
-                        </span>
+                        <div class="super_description"><?php echo __($descripcion_sup, 'main_theme') ?></div>
+                        <div class="description"><?php echo __($descripcion_inf, 'main_theme') ?></div>
                     </div>
                 </div>
+                <img class="cubito-flotante cub-2" src="<?php echo get_template_directory_uri() ?>/assets/img/cubito-2.svg" alt="cubito">
             </section>
         <?php endwhile; ?>
     <?php endif; ?>
@@ -99,13 +93,12 @@ get_header();
                 $subtitle = get_sub_field('subtitulo');
                 $descripcion = get_sub_field('descripcion');
             ?>
-            <section class="section_earth">
+            <section class="section section_earth">
                 <div class="container">
                     <h2 class="subtitle"><?php echo __($subtitle, 'main_theme') ?></h2>
                     <div class="description"><?php echo __($descripcion, 'main_theme') ?></div>
                 </div>
                 <div class="map">
-                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/img_mapamundi.svg" alt="Mapa del mundo">
                     <div class="list_countries">
                         <div class="country c_canada">
                             <p>Canada</p>

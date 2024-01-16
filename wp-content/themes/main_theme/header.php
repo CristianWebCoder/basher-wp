@@ -14,13 +14,18 @@
     <meta name="theme-color" content="#ffffff">
     <!-- Scripts -->
     <script src="<?php echo get_template_directory_uri() ?>/assets/js/jquery-3.7.1.min.js"></script>
+    <script src="<?php echo get_template_directory_uri() ?>/assets/js/aos.js"></script>
     <script src="<?php echo get_template_directory_uri() ?>/assets/js/swiffy-slider.min.js" defer></script>
     <script src="<?php echo get_template_directory_uri() ?>/assets/js/swiffy-slider-extensions.min.js" defer></script>
     <!-- Styles -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/main.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/swiffy-slider.min.css">
-    <!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/aos.css"> -->
-
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/aos.css">
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<script>
+    window.onload = function() {
+        AOS.init();
+    }
+</script>

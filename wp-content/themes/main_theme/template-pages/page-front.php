@@ -7,10 +7,10 @@ defined('ABSPATH') or die('No script kiddies please!');
 get_header();
 ?>
 <?php get_template_part('template-parts/loader'); ?>
-<div class="main_scrollsnap">
-    <?php get_template_part('template-parts/menu/menu'); ?>
+<?php get_template_part('template-parts/menu/menu'); ?>
+<div class="main_scrollsnap" id="pagepiling">
     <!-- CONTENIDO -->
-    <section class="section_banner_and_clients">
+    <section class="section section_banner_and_clients">
         <!-- 2. BANNER -->
         <?php if (have_rows('seccion_banner')) : ?>
             <?php while (have_rows('seccion_banner')) : the_row(); ?>
@@ -26,17 +26,16 @@ get_header();
 
             ?>
                 <div class="section_banner">
+                    <img class="cubito-flotante cub-1" src="<?php echo get_template_directory_uri() ?>/assets/img/cubito-1.svg" alt="cubito">
                     <div class="container">
                         <div class="col col-50">
                             <span class="line">
                                 <h1 class="title_banner"><?php echo __($title_banner, 'main_theme') ?></h1>
                             </span>
-                            <span class="line_button">
-                                <a href="<?php echo esc_url($button_url); ?>" class="primary_button"><?php _e($button_banner, 'main_theme') ?></a>
-                            </span>
+                            <a href="<?php echo esc_url($button_url); ?>" class="primary_button"><?php _e($button_banner, 'main_theme') ?></a>
                         </div>
                         <div class="col col-50">
-                        <?php 
+                            <?php 
                             if ($image_id) {
                                 $image_url = wp_get_attachment_image_url($image_id, 'full'); // O usa un tamaño específico en lugar de 'full'
                                 $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', TRUE);
@@ -44,9 +43,10 @@ get_header();
                                 <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" width="526" height="406">
                                 <?php
                             }
-                        ?>
+                            ?>
                         </div>
                     </div>
+                    <img class="cubito-flotante cub-2" src="<?php echo get_template_directory_uri() ?>/assets/img/cubito-2.svg" alt="cubito">
                 </div>
             <?php endwhile; ?>
         <?php endif; ?>
@@ -97,7 +97,8 @@ get_header();
                 $sub_text_5 = get_sub_field('subtexto_nro_5');
                 $description = get_sub_field('descripcion');
             ?>
-            <section class="section_we_are">
+            <section class="section section_we_are">
+                <img class="cubito-flotante cub-1" src="<?php echo get_template_directory_uri() ?>/assets/img/cubito-1.svg" alt="cubito">
                 <div class="container">
                     <div class="col">
                         <h2>
@@ -114,20 +115,20 @@ get_header();
                         </h2>
                     </div>
                     <div class="col">
-                        <span class="line_description">
-                            <div class="description">
-                            <?php echo __($description, 'main_theme') ?>
-                            </div>
-                        </span>
+                        <div class="description">
+                        <?php echo __($description, 'main_theme') ?>
+                        </div>
                     </div>
                 </div>
+                <img class="cubito-flotante cub-2" src="<?php echo get_template_directory_uri() ?>/assets/img/cubito-2.svg" alt="cubito">
             </section>
         <?php endwhile; ?>
     <?php endif; ?>
     <!-- 5. SERVICES -->
     <?php if (have_rows('seccion_servicios')) : ?>
         <?php while (have_rows('seccion_servicios')) : the_row(); ?>
-            <section class="section_services">
+            <section class="section section_services pp-scrollable">
+                <img class="cubito-flotante cub-1" src="<?php echo get_template_directory_uri() ?>/assets/img/cubito-1.svg" alt="cubito">
                 <div class="container">
                     <?php
                         $subtitle = get_sub_field('subtitulo');
@@ -143,9 +144,7 @@ get_header();
                         $button_url = $url_personalizada ? $url_personalizada : $url_de_pagina;
 
                     ?>
-                    <span class="line_subtitle">
-                        <h2 class="subtitle"><?php echo __($subtitle, 'main_theme') ?></h2>
-                    </span>
+                    <h2 class="subtitle"><?php echo __($subtitle, 'main_theme') ?></h2>
                     <div class="card_services">
                         <?php
                             if ($servicios):
@@ -185,12 +184,13 @@ get_header();
                                 endforeach;
                                 wp_reset_postdata(); // Importante para restablecer la consulta global
                             endif;
-                        ?>
+                        ?>  
                     </div>
                     <a href="<?php echo esc_url($button_url); ?>" class="primary_button"><?php _e($button_banner, 'main_theme') ?></a>
                 </div>
                 <div class="service_before">
                 </div>
+                <img class="cubito-flotante cub-2" src="<?php echo get_template_directory_uri() ?>/assets/img/cubito-2.svg" alt="cubito">
             </section>
         <?php endwhile; ?>
     <?php endif; ?>
@@ -201,13 +201,10 @@ get_header();
                 $subtitle = get_sub_field('subtitulo');
                 $testimonios = get_sub_field('carrusel_de_testimonios');
             ?>
-            <section class="section_testimonial">
+            <section class="section section_testimonial pp-scrollable">
+                <img class="cubito-flotante cub-1" src="<?php echo get_template_directory_uri() ?>/assets/img/cubito-1.svg" alt="cubito">
                 <div class="container">
-                    <span class="line_subtitle">
-                        <h2 class="subtitle"><?php echo __($subtitle, 'main_theme') ?></h2>
-                    </span>
-                </div>
-                <div class="container">
+                    <h2 class="subtitle"><?php echo __($subtitle, 'main_theme') ?></h2>
                     <div class="swiffy-slider slider-item-reveal slider-item-show3 slider-nav-square slider-nav-visible  slider-nav-autopause slider-nav-autoplay slider-indicators-round slider-nav-animation slider-nav-animation-appear slider-nav-animation-fast slider-nav-mousedrag">
                         <div class="slider-container">
                             <?php if( $testimonios ): ?>
@@ -232,6 +229,7 @@ get_header();
                         </ul>
                     </div>
                 </div>
+                <img class="cubito-flotante cub-2" src="<?php echo get_template_directory_uri() ?>/assets/img/cubito-2.svg" alt="cubito">
             </section>
         <?php endwhile; ?>
     <?php endif; ?>
@@ -242,11 +240,10 @@ get_header();
                 $subtitle = get_sub_field('subtitulo');
                 $shortcode = get_sub_field('shortcode_de_contact_form_7');
             ?>
-            <section class="section_contact">
+            <section class="section section_contact pp-scrollable">
+                <img class="cubito-flotante cub-1" src="<?php echo get_template_directory_uri() ?>/assets/img/cubito-1.svg" alt="cubito">
                 <div class="container container_form">
-                    <div class="line_subtitle">
-                        <h2 class="subtitle"><?php echo __($subtitle, 'main_theme') ?></h2>
-                    </div>
+                    <h2 class="subtitle"><?php echo __($subtitle, 'main_theme') ?></h2>
                     <?php echo do_shortcode($shortcode); ?>
                 </div>
                 <div class="container container_thank_you">
@@ -259,6 +256,7 @@ get_header();
                         </p>
                     </div>
                 </div>
+                <img class="cubito-flotante cub-2" src="<?php echo get_template_directory_uri() ?>/assets/img/cubito-2.svg" alt="cubito">
             </section>
         <?php endwhile; ?>
     <?php endif; ?>

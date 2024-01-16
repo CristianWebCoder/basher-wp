@@ -1,5 +1,5 @@
 <!-- 1. HEADER -->
-<header class="section_header">
+<header class="section_header" id="header">
     <div class="container">
         <div class="header_logo">
             <a href="<?php echo home_url(); ?>">

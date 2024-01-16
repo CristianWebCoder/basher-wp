@@ -92,6 +92,9 @@ function add_custom_body_class( $classes ) {
       if( $template_slug == 'template-pages/page-services.php' ) {
         $classes[] = 'page_services';
       }
+      if( $template_slug == 'template-pages/page-contact.php' ) {
+        $classes[] = 'page_contact';
+      }
   }
   
   return $classes;
@@ -130,3 +133,21 @@ function get_youtube_video_id($url) {
   preg_match("/(youtu.be\/|youtube.com\/watch\?v=|youtube.com\/embed\/)([^\&\?\/]+)/", $url, $matches);
   return $matches[2] ?? null;
 }
+
+function cargar_css_condicional() {
+  if (is_page_template('template-pages/page-front.php') || is_page_template('template-pages/page-about.php')) {
+      wp_enqueue_style('pagepiling-css', 'https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.6/jquery.pagepiling.min.css');
+  }
+}
+add_action('wp_enqueue_scripts', 'cargar_css_condicional');
+
+function cargar_scripts_condicional() {
+  // Reemplaza 'tu_plantilla' con la plantilla específica o ID de página.
+  if (is_page_template('template-pages/page-front.php') || is_page_template('template-pages/page-about.php')) {
+      wp_enqueue_script('pagepiling-js', 'https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.6/jquery.pagepiling.min.js', array('jquery'), null, true);
+
+      // Añade un script adicional para inicializar pagePiling
+      wp_add_inline_script('pagepiling-js', 'jQuery(document).ready(function($) { $("#pagepiling").pagepiling(); });');
+  }
+}
+add_action('wp_enqueue_scripts', 'cargar_scripts_condicional');

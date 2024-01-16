@@ -1,5 +1,5 @@
 <!-- 8. FOOTER -->
-<footer class="section_footer">
+<footer class="section section_footer pp-scrollable">
     <div class="pre_foo">
         <div class="container">
             <div class="col col-50">
